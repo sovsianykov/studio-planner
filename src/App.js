@@ -2,6 +2,7 @@ import React from "react";
 import {Grid, Typography} from "@mui/material";
 import MyCalendar from "./shared/components/MyCalendar/MyCalendar";
 import Navbar from "./components/Navbar/Navbar";
+import Form from "./shared/components/Form/Form";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
               <MyCalendar/>
           </Grid>
       </Grid>
-
+      <Form/>
     </div>
   );
 }
