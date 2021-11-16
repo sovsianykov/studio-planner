@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Grid} from "@mui/material";
+import MyCalendar from "./shared/components/MyCalendar/MyCalendar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid container >
+          <Grid item xs={12} md={6} lg={3}>
+              <h5>Studio 1</h5>
+              <MyCalendar/>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+              <h5>Studio 2</h5>
+              <MyCalendar/>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+              <h5>Studio 3</h5>
+              <MyCalendar/>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+              <h5>Studio 4</h5>
+              <MyCalendar/>
+          </Grid>
+      </Grid>
+
     </div>
   );
 }
