@@ -1,6 +1,6 @@
 import React from "react";
 import Calendar from "react-awesome-calendar";
-import { Box } from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import { makeStyles, createStyles } from "@mui/styles";
 
 const events = [
@@ -39,11 +39,14 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const MyCalendar = () => {
+const MyCalendar = ({list}) => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <Calendar events={events} />
+      <Typography variant='h5' align='center' marginTop='50px'>
+        {list.studio}
+      </Typography>
+      <MyCalendar list={events}/>
     </Box>
   );
 };

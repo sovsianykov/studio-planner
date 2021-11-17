@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
-import { eventList } from "../../../content";
+import { eventLists } from "../../../content";
 import { createStyles, makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) =>
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) =>
 
 const Form = () => {
   const classes = useStyles();
-  const [reh, setReh] = useState(eventList[0]);
+  const [reh, setReh] = useState(eventLists[0]);
   // const [list, setList] = useState([]);
   console.log(reh);
 

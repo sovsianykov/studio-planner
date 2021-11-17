@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from "uuid"
 
-export const eventList = [
+export const eventLists = [
     {id: uuidv4(),
+        studio:"A",
         color: "#3694DF",
         fromTime: '',
         fromDate: '',
@@ -9,5 +10,39 @@ export const eventList = [
         toDate: '',
         title: "Rehearsal",
         options:'with drums',
-    }
+
+    },
+    {id: uuidv4(),
+        studio:"B",
+        color: "#3694DF",
+        fromTime: '',
+        fromDate: '',
+        toTime: '',
+        toDate: '',
+        title: "Rehearsal",
+        options:'with drums',
+
+    },
+    {id: uuidv4(),
+        studio:"C",
+        color: "#3694DF",
+        fromTime: '',
+        fromDate: '',
+        toTime: '',
+        toDate: '',
+        title: "Rehearsal",
+        options:'with drums',
+
+    },
+    {id: uuidv4(),
+        studio:"D",
+        color: "#3694DF",
+        fromTime: '',
+        fromDate: '',
+        toTime: '',
+        toDate: '',
+        title: "Rehearsal",
+        options:'with drums',
+
+    },
 ]
