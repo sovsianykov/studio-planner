@@ -12,7 +12,7 @@ export const useFetch = () =>{
         // dispatch(errorMessage())
     },[dispatch])
 
-    const { rehearsalsList , loading, error } = useSelector(state => state.listReducer)
+    const { rehearsalsList , loading, error } = useSelector(state => state.apiReducer)
 
     return { rehearsalsList , loading, error }
 }
