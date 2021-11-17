@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
-import { eventLists } from "../../../content";
+import {eventLists, initialRehearsal} from "../../../content";
 import { createStyles, makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) =>
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 const Form = () => {
+  console.log(initialRehearsal)
   const classes = useStyles();
   const [reh, setReh] = useState(eventLists[0]);
   // const [list, setList] = useState([]);
@@ -57,18 +58,13 @@ const Form = () => {
   const onChangeHandler = (e) => {
     setReh((reh) => ({ ...reh, [e.target.name]: e.target.value }));
   };
-  // const onSubmitHandler = async (e) => {
-  //     e.preventDefault();
-  //     setList((list) => list.push(evnt))
-  //
-  //
-  // };
+
   return (
     <Box
       component="form"
       className={classes.mainWrapper}
       sx={{
-        "& > :not(style)": { m: 1, width: "100%" },
+        "& > :not(style)": { m: 1, width: 340 },
       }}
       noValidate
       autoComplete="off"
