@@ -16,7 +16,6 @@ export const fetchSuccess = () => {
             if (data) {
                 response = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             }
-            console.log(response)
             dispatch({ type: FETCH_SUCCESS, payload: response });
         } catch (e) {
             errorMessage();
