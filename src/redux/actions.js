@@ -16,7 +16,6 @@ export const fetchSuccess = () => {
             if (data) {
                 response = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             }
-            console.log(response)
             dispatch({ type: FETCH_SUCCESS, payload: response });
         } catch (e) {
             errorMessage();
@@ -31,7 +30,7 @@ function errorMessage() {
 
 export const createRehearsal = (newRehearsal) => {
     return async (dispatch) => {
-        if (newRehearsal.artist && newRehearsal.date) {
+        if (newRehearsal.title && newRehearsal.from) {
             await addDoc(usersCollectionRef, newRehearsal);
             dispatch({ type: CREATE_REHEARSAL, payload: newRehearsal });
         }
