@@ -47,14 +47,14 @@ export const eventLists = [
     },
 ]
 class Rehearsal {
-    constructor(artist,studio,color,fromTime,toTime,date,options,id) {
+    constructor(title,studio,color,start,end,date,options,id) {
         this.id = id
         this.studio = studio
-        this.artist = artist
+        this.title = title
         this.date = date
-        this.fromTime = fromTime
-        this.toTime = toTime
-        this.color = color
+        this.start = start
+        this.end = end
+        this.color = "purple"
         this.options = options
     }
 }

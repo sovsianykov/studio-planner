@@ -1,7 +1,8 @@
 import React from "react";
 import Calendar from "react-awesome-calendar";
-import {Box, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles, createStyles } from "@mui/styles";
+import { initialRehearsal } from "../../../content";
 
 const events = [
   {
@@ -39,14 +40,21 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const MyCalendar = ({list}) => {
+const MyCalendar = ({ list }) => {
+  // const rehLst = list.map((el, i, arr) => {
+  //   (rehLst[i].from = el.fromTime),
+  //       (rehLst[i].to = el.toTime);
+  //       (rehLst[i].color = el.color);t
+  //       return arr
+  // });
+  console.log(list)
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <Typography variant='h5' align='center' marginTop='50px'>
-        {list.studio}
+      <Typography variant="h5" align="center" marginTop="50px">
+
       </Typography>
-      <MyCalendar list={events}/>
+      <Calendar events={list} />
     </Box>
   );
 };

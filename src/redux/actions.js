@@ -30,7 +30,7 @@ function errorMessage() {
 
 export const createRehearsal = (newRehearsal) => {
     return async (dispatch) => {
-        if (newRehearsal.artist && newRehearsal.date) {
+        if (newRehearsal.title && newRehearsal.from) {
             await addDoc(usersCollectionRef, newRehearsal);
             dispatch({ type: CREATE_REHEARSAL, payload: newRehearsal });
         }

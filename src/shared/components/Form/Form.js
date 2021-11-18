@@ -1,14 +1,21 @@
-import React, { useState } from "react";
-import { Box, TextField } from "@mui/material";
-import {eventLists, initialRehearsal} from "../../../content";
+import React from "react";
+import {
+  Box,
+  Button,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
+import { useForm } from "../../../hooc/useForm";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       width: 350,
       padding: 5,
-      height: 180,
+      height: 240,
       marginTop: 20,
       display: "flex",
       flexDirection: "column",
@@ -49,15 +56,9 @@ const useStyles = makeStyles((theme) =>
 );
 
 const Form = () => {
-  console.log(initialRehearsal)
   const classes = useStyles();
-  const [reh, setReh] = useState(eventLists[0]);
-  // const [list, setList] = useState([]);
-  console.log(reh);
 
-  const onChangeHandler = (e) => {
-    setReh((reh) => ({ ...reh, [e.target.name]: e.target.value }));
-  };
+  const { reh, onChangeHandler, onSubmitHandler } = useForm();
 
   return (
     <Box
@@ -73,55 +74,72 @@ const Form = () => {
 
       <div className={classes.root}>
         <label htmlFor="start" className={classes.label}>
-          Начало
+          Дата
         </label>
-        <TextField
-          type="time"
-          variant="standard"
-          name="fromTime"
-          value={reh.fromTime}
-          className={classes.inputEvent}
-          onChange={onChangeHandler}
-        />
         <TextField
           type="date"
           variant="standard"
-          name="fromDate"
-          value={reh.fromDate}
+          name="date"
+          value={reh.date}
           className={classes.inputEvent}
           onChange={onChangeHandler}
         />
-      </div>
-      <div className={classes.root}>
         <label htmlFor="start" className={classes.label}>
-          Окончание
+          Начало репетиции
         </label>
-
         <TextField
           type="time"
           variant="standard"
-          name="toTime"
-          value={reh.to}
+          name="start"
+          value={reh.start}
           className={classes.inputEvent}
           onChange={onChangeHandler}
         />
+
+        <label htmlFor="start" className={classes.label}>
+          Окончание репетиции
+        </label>
         <TextField
-          type="date"
+          type="time"
           variant="standard"
-          name="toDate"
-          value={reh.to}
+          name="end"
+          value={reh.end}
           className={classes.inputEvent}
           onChange={onChangeHandler}
         />
       </div>
+
       <TextField
-        label="title"
+        label="Артист"
         variant="standard"
         name="title"
         value={reh.title}
         className={classes.inputEvent}
         onChange={onChangeHandler}
       />
+      {/*<TextField*/}
+      {/*  label="studio"*/}
+      {/*  variant="standard"*/}
+      {/*  name="studio"*/}
+      {/*  value={reh.studio}*/}
+      {/*  className={classes.inputEvent}*/}
+      {/*  onChange={onChangeHandler}*/}
+      {/*/>*/}
+      <InputLabel id="demo-simple-select-label" className={classes.inputEvent}>
+        выбрать студию
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={reh.studio}
+        name="studio"
+        onChange={onChangeHandler}
+      >
+        <MenuItem value={"A"}>студия А</MenuItem>
+        <MenuItem value={"B"}>студия B</MenuItem>
+        <MenuItem value={"C"}>студия C</MenuItem>
+        <MenuItem value={"D"}>студия D</MenuItem>
+      </Select>
       <TextField
         label="options"
         variant="standard"
@@ -130,7 +148,7 @@ const Form = () => {
         className={classes.inputEvent}
         onChange={onChangeHandler}
       />
-      {/*<Button onClick={onSubmitHandler}>Submit</Button>*/}
+      <Button onClick={onSubmitHandler}>Submit</Button>
     </Box>
   );
 };
