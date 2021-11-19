@@ -5,7 +5,7 @@ import cn from "classnames"
 const useStyles = makeStyles(() =>
     createStyles({
         grey : {
-            width: 60,
+            width: 55,
             height: 30,
             background : "#CCC",
             display: "flex",
@@ -20,7 +20,7 @@ const useStyles = makeStyles(() =>
 
         },
         busy : {
-            width: 60,
+            width: 55,
             height: 30,
             background : "#f10808",
             display: "flex",
@@ -33,7 +33,7 @@ const useStyles = makeStyles(() =>
             lineHeight: "30px",
         },
     reserved:   {
-        width: 60,
+        width: 55,
         height: 30,
         background : "#ece340",
         display: "flex",
@@ -46,7 +46,7 @@ const useStyles = makeStyles(() =>
         lineHeight: "30px",
     },
         free :   {
-            width: 60,
+            width: 55,
             height: 30,
             background : "#53d91e",
             display: "flex",
