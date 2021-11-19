@@ -1,18 +1,18 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Form from "./shared/components/Form/Form";
-import CalendarList from "./components/CalendarList/CalendarList";
-import Cell from "./shared/components/Cell/Cell";
 import Day from "./shared/components/Day/Day";
+import {Grid} from "@mui/material";
+
 
 function App() {
   return (
-    <div className="App" style={{ marginTop: 100 }}>
+    <div className="App" >
       <Navbar />
-      {/*<CalendarList />*/}
-      {/*<Form />*/}
-       <Day/>
-
+      <Grid container style={{ marginTop: 80, display:"flex", flexDirection:"column",alignItems:'center' }} >
+          <Grid item xs={12} mp={4}>
+              <Day/>
+          </Grid>
+      </Grid>
     </div>
   );
 }

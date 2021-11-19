@@ -5,7 +5,7 @@ import cn from "classnames"
 const useStyles = makeStyles(() =>
     createStyles({
         grey : {
-            width: 70,
+            width: 60,
             height: 30,
             background : "#CCC",
             display: "flex",
@@ -17,37 +17,46 @@ const useStyles = makeStyles(() =>
             padding: 5,
             fftSize: "20px",
             lineHeight: "30px",
-            borderTop: "2px solid red"
+
         },
         busy : {
-            width: 70,
+            width: 60,
             height: 30,
             background : "#f10808",
             display: "flex",
             flexDirection: "column",
             alignContent: "center",
             transaction: '.3s ease-in-out',
-            cursor:"pointer"
+            cursor:"pointer",
+            padding: 5,
+            fftSize: "20px",
+            lineHeight: "30px",
         },
     reserved:   {
-        width: 70,
+        width: 60,
         height: 30,
         background : "#ece340",
         display: "flex",
         flexDirection: "column",
         alignContent: "center",
         transaction: '.3s ease-in-out',
-        cursor:"pointer"
+        cursor:"pointer",
+        padding: 5,
+        fftSize: "20px",
+        lineHeight: "30px",
     },
         free :   {
-            width: 70,
+            width: 60,
             height: 30,
             background : "#53d91e",
             display: "flex",
             flexDirection: "column",
             alignContent: "center",
             transaction: '.3s ease-in-out',
-            cursor:"pointer"
+            cursor:"pointer",
+            padding: 5,
+            fftSize: "20px",
+            lineHeight: "30px",
         }
     })
 );

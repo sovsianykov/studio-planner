@@ -5,11 +5,6 @@ import Cell from "../Cell/Cell";
 const useStyles = makeStyles(() =>
     createStyles({
         root : {
-            width: 366,
-            height: 34,
-            display: "flex",
-            justifyContent:'space-between',
-            alignItems:"center",
             background:"firebrick"
         }
     }))
@@ -17,13 +12,15 @@ const useStyles = makeStyles(() =>
 const DayHeader = () => {
     const classes = useStyles()
     return (
-        <section className={classes.root}>
-          <Cell isGray={true}></Cell>
-          <Cell isGray={true}>br</Cell>
-          <Cell isGray={true}>wr</Cell>
-          <Cell isGray={true}>rh</Cell>
-          <Cell isGray={true}>whh</Cell>
-        </section>
+        <thead className={classes.root}>
+            <tr>
+              <td><Cell isGray={true}/></td>
+              <th><Cell isGray={true}>WR</Cell></th>
+              <th><Cell isGray={true}>MR</Cell></th>
+              <th><Cell isGray={true}>CR</Cell></th>
+              <th><Cell isGray={true}>LR</Cell></th>
+            </tr>
+        </thead>
     );
 };
 
